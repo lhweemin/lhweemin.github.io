@@ -22,7 +22,7 @@ body
     font-family: "Manrope", system-ui, sans-serif;
     color: var(--text);
     background: #ffffff;
-    line-height: 1.5f;
+    line-height: 1.5;
 }
 
 a 
@@ -269,8 +269,8 @@ h1 {
 
 /* PROJECT CARDS */
 .cards {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
     gap: 28px;
 }
 
@@ -479,6 +479,17 @@ h1 {
     box-shadow: 0 18px 40px rgba(20, 22, 26, 0.10);
 }
 
+.js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.js .reveal.in {
+    opacity: 1;
+    transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
@@ -492,5 +503,222 @@ h1 {
     .card,
     .btn {
         transition: none;
+    }
+
+    .js .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* PROFILE PHOTO */
+.avatar {
+    position: relative;
+    flex: 0 1 340px;
+    min-width: 240px;
+    aspect-ratio: 1 / 1;
+    border-radius: 32px;
+    overflow: hidden;
+    background: #F1F3F6;
+    border: 1px solid var(--line);
+}
+
+.avatar-fallback {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 72px;
+    height: 72px;
+    margin: -36px 0 0 -36px;
+    color: #8A93A3;
+}
+
+.avatar-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* PROJECT POP-UP */
+.card {
+    position: relative;
+}
+
+.card-link {
+    font: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    background: none;
+    border: 0;
+    padding: 0;
+    text-align: left;
+    cursor: pointer;
+}
+
+    .card-link::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+    }
+
+    .card-link:focus-visible {
+        outline: none;
+    }
+
+.card:focus-within {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+.modal {
+    width: min(640px, calc(100% - 32px));
+    max-height: calc(100dvh - 32px);
+    padding: 0;
+    border: 0;
+    border-radius: 24px;
+    overflow: auto;
+    color: var(--text);
+}
+
+    .modal::backdrop {
+        background: rgba(20, 22, 26, 0.6);
+    }
+
+    .modal[open] {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+        animation: rise 0.3s ease both;
+    }
+
+        .modal[open] > * {
+            flex-shrink: 0;
+        }
+
+.modal-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border: 0;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(20, 22, 26, 0.18);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-media {
+    aspect-ratio: 16 / 9;
+    background: #14161A;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+    .modal-media video {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    .modal-media.demo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #B8BECB;
+        font-weight: 600;
+    }
+
+.gallery {
+    position: relative;
+}
+
+.gal-track {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+}
+
+    .gal-track::-webkit-scrollbar {
+        display: none;
+    }
+
+    .gal-track img {
+        flex: 0 0 calc((100% - 24px) / 3);
+        min-width: 0;
+        height: auto;
+        aspect-ratio: 16 / 10;
+        object-fit: cover;
+        border-radius: 12px;
+        scroll-snap-align: start;
+    }
+
+.gal-btn {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    width: 36px;
+    height: 36px;
+    transform: translateY(-50%);
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: #ffffff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.gal-prev {
+    left: 8px;
+}
+
+.gal-next {
+    right: 8px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+    .modal-body h3 {
+        margin: 0;
+        padding-right: 48px;
+        font-size: 24px;
+        letter-spacing: -0.02em;
+    }
+
+    .modal-body p {
+        margin: 0;
+        line-height: 1.6;
+    }
+
+.badge {
+    align-self: flex-start;
+    padding: 5px 12px;
+    border: 1px solid #CBD0DA;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+}
+
+.note {
+    font-size: 14px;
+}
+
+@media (max-width: 520px) {
+    .gal-track img {
+        flex-basis: calc((100% - 12px) / 2);
     }
 }
