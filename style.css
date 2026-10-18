@@ -236,3 +236,108 @@ h1 {
     font-size: 16px;
     font-weight: 600;
 }
+
+/* SECTIONS */
+.section {
+    padding-bottom: 72px;
+}
+
+    .section h2 {
+        margin: 0;
+        font-size: 44px;
+        letter-spacing: -0.03em;
+        font-weight: 800;
+    }
+
+.section-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.text-link {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+    .text-link:hover {
+        color: var(--text);
+    }
+
+/* PROJECT CARDS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+}
+
+.card {
+    flex: 1 1 300px;
+    min-width: 0;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    overflow: hidden;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+}
+
+.thumb {
+    aspect-ratio: 16 / 10;
+    background: #F1F3F6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6B7385;
+    font-size: 14px;
+    font-weight: 500;
+    overflow: hidden;
+}
+
+    .thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+}
+
+.card p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .tags li {
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: #EEF2FF;
+        color: #1F3FB0;
+        font-size: 13px;
+        font-weight: 600;
+    }
