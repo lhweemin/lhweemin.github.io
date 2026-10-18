@@ -1,0 +1,68 @@
+﻿:root 
+{
+    --accent: #1F4FD8;
+    --text: #14161A;
+    --muted: #4B5160;
+    --line: #E3E6EC;
+}
+
+* 
+{
+    box-sizing: border-box;
+}
+
+html 
+{
+    scroll-behavior: smooth;
+}
+
+body
+{
+    margin: 0;
+    font-family: "Manrope", system-ui, sans-serif;
+    color: var(--text);
+    background: #ffffff;
+    line-height: 1.5f;
+}
+
+a 
+{
+    color: var(--text);
+    text-decoration:none;
+}
+
+a:hover
+{
+    color: var(--accent);
+}
+
+header,
+main,
+footer
+{
+    max-width:1120px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+header 
+{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 28px;
+    padding-bottom: 28px;
+}
+
+nav
+{
+    display: flex;
+    gap: 28px;
+}
+
+p 
+{
+    color: var(--muted);
+}
