@@ -366,6 +366,16 @@ h1 {
         font-weight: 600;
     }
 
+.skill-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+}
+
+.skill-group .eyebrow {
+    margin-bottom: 20px;
+}
+
 /* CONTACT */
 .contact {
     background: var(--text);
@@ -721,4 +731,24 @@ h1 {
     .gal-track img {
         flex-basis: calc((100% - 12px) / 2);
     }
+}
+
+/* STICKY NAV */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    max-width: none;
+    padding-left: max(24px, calc((100% - 1120px) / 2 + 24px));
+    padding-right: max(24px, calc((100% - 1120px) / 2 + 24px));
+    padding-top: 16px;
+    padding-bottom: 16px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+}
+
+/* stop section titles hiding under the sticky nav when you click a nav link */
+section[id], footer[id] {
+    scroll-margin-top: 90px;
 }

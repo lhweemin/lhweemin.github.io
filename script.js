@@ -24,6 +24,32 @@
     }
 })();
 
+// THEME TOGGLE: classic <-> blocky. The saved choice is applied early by a
+// small script in index.html's <head>; this part handles the button.
+(function () {
+    var root = document.documentElement;
+    var btn = document.getElementById("theme-toggle");
+    if (!btn) return;
+
+    function isBlocky() {
+        return root.getAttribute("data-theme") === "blocky";
+    }
+
+    // The button names the theme you will switch TO.
+    function updateLabel() {
+        btn.textContent = isBlocky() ? "Classic mode" : "Blocky mode";
+    }
+
+    updateLabel();
+
+    btn.addEventListener("click", function () {
+        var next = isBlocky() ? "classic" : "blocky";
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("theme", next); } catch (e) { }
+        updateLabel();
+    });
+})();
+
 (function () {
     var list = document.getElementById("project-list");
     var modals = document.getElementById("project-modals");

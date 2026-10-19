@@ -9,7 +9,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script>document.documentElement.classList.add("js");</script>
+    <link rel="stylesheet" href="blocky.css">
+    <script>
+                document.documentElement.classList.add("js");
+                // Apply the saved theme before the page paints, so there is no flash.
+                (function () {
+                    var t = "classic";
+                    try { t = localStorage.getItem("theme") || "classic"; } catch (e) { }
+                    document.documentElement.setAttribute("data-theme", t === "blocky" ? "blocky" : "classic");
+                })();
+    </script>
 </head>
 <body>
     <header>
@@ -18,6 +27,8 @@
             <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#contact">Contact</a>
+            <button type="button" id="theme-toggle" class="theme-toggle">Blocky mode</button>
+
         </nav>
     </header>
 
@@ -25,8 +36,8 @@
         <section id="top" class="hero">
             <div class="hero-text">
                 <p class="status rise"><span class="dot"></span>Open to internships</p>
-                <h1 class="rise rise-2">Hi, I'm <span class="accent">Hwee Min</span>.</h1>
-                <p class="lead rise rise-3">Year 3 CS-RTIS student at Singapore Institute of Technology.</p>
+                <h1 class="rise rise-2">Hey there, I'm <span class="accent">Hwee Min</span>!</h1>
+                <p class="lead rise rise-3">Software Engineer</p>
                 <div class="buttons rise rise-3">
                     <a class="btn btn-primary" href="#projects">View projects</a>
                     <a class="btn btn-outline" href="#contact">Contact me</a>
@@ -38,26 +49,31 @@
                     <circle cx="12" cy="8" r="4" />
                     <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
                 </svg>
-                <img class="avatar-img" src="profile.jpg" alt="Photo of Hwee Min" onerror="this.style.display='none'">
+                <img class="avatar-img" src="assets/profile.jpg" alt="Photo of Hwee Min" onerror="this.style.display='none'">
             </div>
         </section>
 
         <section id="about" class="about reveal">
             <h2 class="eyebrow">About me</h2>
             <div class="about-body">
-                <p class="big">Write one bold sentence about what drives you and what you like to build.</p>
-                <p>Two or three sentences: how you got into tech,what you study, and what kind of problems you enjoy solving.</p>
+                <p class="big">I started out playing games and wondering how anyone thinks of things like that. Now I want to build them.</p>
+                <p>
+                    That curiosity pulled me into tech. I'm a Year 3 Computer Science student at Singapore Institute
+                    of Technology, and I like building all kinds of software, from games to websites and apps. I love
+                    learning to be more creative, letting my mind wander, solving problems, and trying things that are
+                    a little out of my limits.
+                </p>
                 <dl class="facts">
                     <div><dt>Studying</dt><dd>CS-RTIS, Singapore Institute of Technology</dd></div>
                     <div><dt>Year</dt><dd>Year 3</dd></div>
-                    <div><dt>Interested in</dt><dd>Your focus areas</dd></div>
+                    <div><dt>Interested in</dt><dd>Web, apps, games, problem solving</dd></div>
                 </dl>
             </div>
         </section>
 
         <section id="projects" class="section reveal">
             <div class="section-head">
-                <h2>Projects</h>s
+                <h2>Projects</h2>
             </div>
 
             <div class="cards" id="project-list"></div>
@@ -65,34 +81,65 @@
         </section>
 
         <section id="skills" class="section reveal">
-            <h2 class="eyebrow">Skills</h2>
-            <ul class="skills">
-                <li>Git and GitHub</li>
-                <li>HTML and CSS</li>
-                <li>Language 1</li>
-                <li>Language 2</li>
-                <li>Tool 1</li>
-                <li>Tool 2</li>
-            </ul>
+            <div class="skill-groups">
+
+                <div class="skill-group">
+                    <h2 class="eyebrow">Languages</h2>
+                    <ul class="skills">
+                        <li>C</li>
+                        <li>C++</li>
+                        <li>C#</li>
+                        <li>Python</li>
+                        <li>Kotlin</li>
+                        <li>Swift</li>
+                        <li>SQL</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h2 class="eyebrow">Tools</h2>
+                    <ul class="skills">
+                        <li>Git and GitHub</li>
+                        <li>Visual Studio Code</li>
+                        <li>Visual Studio</li>
+                        <li>Android Studio</li>
+                        <li>Xcode</li>
+                        <li>Unity</li>
+                    </ul>
+                </div>
+
+                <div class="skill-group">
+                    <h2 class="eyebrow">Designs</h2>
+                    <ul class="skills">
+                        <li>Figma</li>
+                        <li>Adobe XD</li>
+                        <li>Photoshop</li>
+                    </ul>
+                </div>
+
+            </div>
         </section>
 
     </main>
 
     <footer id="contact" class="contact">
         <div class="contact-inner">
-            <h2>Let's build something together.</h2>
-            <a class="mail" href="mailto:you@example.com">you@example.com</a>
-            <div class="links">
-                <a href="https://github.com/lhweemin">GitHub</a>
-                <a href="https://www.linkedin.com/in/your-profile">LinkedIn</a>
+            <!-- <h2>Let's build something together.</h2> -->
+                <a class="mail" href="mailto:lhmleehweemin03@gmail.com">lhmleehweemin03@gmail.com</a>
+                <div class="links">
+                    <a href="https://github.com/lhweemin">GitHub</a>
+                    <a href="https://www.linkedin.com/in/leehweemin">LinkedIn</a>
+                </div>
+                <p class="small">&copy; 2026 Hwee Min. Built with HTML and CSS, hosted on GitHub Pages.</p>
             </div>
-            <p class="small">&copy; 2026 Hwee Min. Built with HTML and CSS, hosted on GitHub Pages.</p>
-        </div>
-    </footer>
+        </footer>
 
-    <div id="project-modals"></div>
+        <div id="project-modals"></div>
 
-    <script src="projects.js"></script>
-    <script src="script.js"></script>
-</body>
-</html>
+        <script src="projects.js"></script>
+        <script src="script.js"></script>
+    </body>
+    </html>
