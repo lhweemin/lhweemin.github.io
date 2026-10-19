@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BTS Albums</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: "Times New Roman", serif; background: #111; color: #fff; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    height: 100vh;
+    min-height: 420px;
+    background: linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.45)), url("studio.jpg") center/cover no-repeat, #1a1a1a;
+    filter: grayscale(1);
+  }
+  .hero * { filter: none; }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+  }
+  .logo {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    /* Save your logo as logo.png next to this file */
+    background: url("logo.png") center/cover no-repeat, #000;
+  }
+  nav ul { list-style: none; display: flex; gap: 28px; }
+  nav a { color: #fff; text-decoration: none; font-size: 13px; letter-spacing: .5px; }
+  nav a:hover { text-decoration: underline; }
+
+  .hero h1 {
+    position: absolute;
+    top: 62%;
+    width: 100%;
+    text-align: center;
+    font-size: 48px;
+    font-weight: normal;
+    letter-spacing: 2px;
+  }
+
+  /* ---------- Albums ---------- */
+  .albums {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 30px;
+  }
+  .album { text-align: center; }
+  .cover {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background: #333;
+    border: 1px solid #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+  .cover { background-size: cover; background-position: center; color: transparent; }
+
+  /* Save your cover images in a folder called "covers" next to this file,
+     named 1.jpg, 2.jpg ... 15.jpg in the same order as below */
+  .album:nth-child(1)  .cover { background-image: url("covers/1.jpg"); }
+  .album:nth-child(2)  .cover { background-image: url("covers/2.jpg"); }
+  .album:nth-child(3)  .cover { background-image: url("covers/3.jpg"); }
+  .album:nth-child(4)  .cover { background-image: url("covers/4.jpg"); }
+  .album:nth-child(5)  .cover { background-image: url("covers/5.jpg"); }
+  .album:nth-child(6)  .cover { background-image: url("covers/6.jpg"); }
+  .album:nth-child(7)  .cover { background-image: url("covers/7.jpg"); }
+  .album:nth-child(8)  .cover { background-image: url("covers/8.jpg"); }
+  .album:nth-child(9)  .cover { background-image: url("covers/9.jpg"); }
+  .album:nth-child(10) .cover { background-image: url("covers/10.jpg"); }
+  .album:nth-child(11) .cover { background-image: url("covers/11.jpg"); }
+  .album:nth-child(12) .cover { background-image: url("covers/12.jpg"); }
+  .album:nth-child(13) .cover { background-image: url("covers/13.jpg"); }
+  .album:nth-child(14) .cover { background-image: url("covers/14.jpg"); }
+  .album:nth-child(15) .cover { background-image: url("covers/15.jpg"); }
+  .album p { font-size: 16px; }
+  .album span { display: block; font-size: 12px; color: #aaa; margin-top: 4px; }
+
+  @media (max-width: 700px) {
+    .albums { grid-template-columns: 1fr; }
+    nav ul { gap: 14px; }
+  }
+</style>
+</head>
+<body>
+
+  <header class="hero">
+    <nav>
+      <div class="logo"></div>
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">MEMBERS</a></li>
+        <li><a href="#">EVENTS</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+    <h1>ALBUMS</h1>
+  </header>
+
+  <!-- To add real covers: replace the text inside each .cover with
+       <img src="your-image.jpg" alt="title"> -->
+  <main class="albums">
+    <div class="album"><div class="cover">Cover</div><p>2 Cool 4 Skool</p><span>2013</span></div>
+    <div class="album"><div class="cover">Cover</div><p>O!RUL8,2?</p><span>2013</span></div>
+    <div class="album"><div class="cover">Cover</div><p>Skool Luv Affair</p><span>2014</span></div>
+
+    <div class="album"><div class="cover">Cover</div><p>Dark &amp; Wild</p><span>2014</span></div>
+    <div class="album"><div class="cover">Cover</div><p>The Most Beautiful Moment in Life Pt. 1</p><span>2015</span></div>
+    <div class="album"><div class="cover">Cover</div><p>The Most Beautiful Moment in Life Pt. 2</p><span>2015</span></div>
+
+    <div class="album"><div class="cover">Cover</div><p>Young Forever</p><span>2016</span></div>
+    <div class="album"><div class="cover">Cover</div><p>Wings</p><span>2016</span></div>
+    <div class="album"><div class="cover">Cover</div><p>You Never Walk Alone</p><span>2017</span></div>
+
+    <div class="album"><div class="cover">Cover</div><p>Love Yourself: Her</p><span>2017</span></div>
+    <div class="album"><div class="cover">Cover</div><p>Love Yourself: Tear</p><span>2018</span></div>
+    <div class="album"><div class="cover">Cover</div><p>Love Yourself: Answer</p><span>2018</span></div>
+
+    <div class="album"><div class="cover">Cover</div><p>Map of the Soul: Persona</p><span>2019</span></div>
+    <div class="album"><div class="cover">Cover</div><p>Map of the Soul: 7</p><span>2020</span></div>
+    <div class="album"><div class="cover">Cover</div><p>BE</p><span>2020</span></div>
+  </main>
+
+</body>
+</html>
