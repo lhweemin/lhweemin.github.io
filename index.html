@@ -74,9 +74,10 @@
         <section id="projects" class="section reveal">
             <div class="section-head">
                 <h2>Projects</h2>
+                <a class="text-link" id="more-projects" href="projects.html" hidden>More projects &rarr;</a>
             </div>
 
-            <div class="cards" id="project-list"></div>
+            <div class="cards" id="project-list" data-limit="6"></div>
 
         </section>
 
@@ -128,18 +129,19 @@
     <footer id="contact" class="contact">
         <div class="contact-inner">
             <!-- <h2>Let's build something together.</h2> -->
-                <a class="mail" href="mailto:lhmleehweemin03@gmail.com">lhmleehweemin03@gmail.com</a>
-                <div class="links">
-                    <a href="https://github.com/lhweemin">GitHub</a>
-                    <a href="https://www.linkedin.com/in/leehweemin">LinkedIn</a>
-                </div>
-                <p class="small">&copy; 2026 Hwee Min. Built with HTML and CSS, hosted on GitHub Pages.</p>
+            <a class="mail" href="mailto:lhmleehweemin03@gmail.com">lhmleehweemin03@gmail.com</a>
+            <div class="links">
+                <a href="https://github.com/lhweemin">GitHub</a>
+                <a href="https://www.linkedin.com/in/leehweemin">LinkedIn</a>
             </div>
-        </footer>
+            <p class="small">&copy; 2026 Hwee Min. Built with HTML and CSS, hosted on GitHub Pages.</p>
+        </div>
+    </footer>
 
-        <div id="project-modals"></div>
+    <div id="project-modals"></div>
 
-        <script src="projects.js"></script>
-        <script src="script.js"></script>
-    </body>
-    </html>
+    <script src="projects.js"></script>
+    <script src="projects-ui.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -752,3 +752,16 @@ header {
 section[id], footer[id] {
     scroll-margin-top: 90px;
 }
+
+.subpage {
+    padding-top: 24px;
+}
+
+.subfooter {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 14px;
+    color: #8A93A3;
+}

@@ -81,6 +81,6 @@ var projects = [
         images: ["assets/band-web/cover.png"],                      
         video: "",
         links: [],                        
-        note: "Source code is private (school project built on a course framework)."
+        note: ""
     }
 ];
